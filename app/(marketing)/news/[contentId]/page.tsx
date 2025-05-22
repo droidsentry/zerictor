@@ -54,7 +54,7 @@ export default async function Page({
   );
 }
 
-export const formatRichText = (richText: string) => {
+function formatRichText(richText: string) {
   const $ = load(richText, null, false);
   $("pre code").each((_, elm) => {
     const lang = $(elm).attr("class");
@@ -66,4 +66,4 @@ export const formatRichText = (richText: string) => {
     $(elm).html(res.value);
   });
   return $.html();
-};
+}

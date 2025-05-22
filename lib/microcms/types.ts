@@ -21,7 +21,7 @@ export type NewsContent = {
 
 export type NewsItem = NewsContent & MicroCMSContentId & MicroCMSDate;
 
-export type NewsList = {
+export type NewsLists = {
   articles?: NewsItem[];
 };
 

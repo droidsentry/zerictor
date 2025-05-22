@@ -1,18 +1,11 @@
-import { Article } from "@/lib/microcms/types";
+import { NewsLists, NewsDetail } from "@/lib/microcms/types";
 import { Card } from "@/lib/components/ui/card";
 import Image from "next/image";
 import { Badge } from "@/lib/components/ui/badge";
 import Link from "next/link";
 import { formatToJapaneseDateTime } from "@/lib/microcms/date-fns";
 
-export type ArticlesProps = {
-  articles?: Article[];
-};
-export type NewsProps = {
-  news: Article;
-};
-
-export default function NewsList({ articles }: ArticlesProps) {
+export default function NewsList({ articles }: NewsLists) {
   if (!articles) {
     return null;
   }
@@ -28,7 +21,7 @@ export default function NewsList({ articles }: ArticlesProps) {
   );
 }
 
-export function NewsListItem({ news }: NewsProps) {
+export function NewsListItem({ news }: NewsDetail) {
   return (
     <li>
       <Card className="p-6 duration-300 hover:shadow-none hover:translate-2 relative">
