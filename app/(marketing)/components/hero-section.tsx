@@ -7,27 +7,29 @@ export default function HeroSection() {
       <div className="text-primary-foreground tracking-widest">
         <div className="flex flex-col mb-22">
           <h1 className="text-6xl md:text-8xl font-semibold font-montserrat opacity-0 animate-fadeInUp break-words break-all">
-            PRECISION
+            ゼロから世界を描け。
           </h1>
           <h2 className="text-4xl md:text-6xl font-bold font-montserrat opacity-0 animate-fadeInUpDelay">
-            小さな粒子が大きな未来をつくる
+            Zerictor – 熱中と創造のITカンパニー
           </h2>
         </div>
         <div className="font-semibold opacity-0 animate-fadeInUpDelay5">
           <p className="mb-8 text-sm md:text-xl">OUR MISSION</p>
           <p className="mb-2 text-lg md:text-2xl lg:text-[28px] ">
-            粒子の世界に革新を。
+            常識を疑い、ゼロから創る。
           </p>
           <p className="mb-12 text-lg md:text-2xl lg:text-[28px] flex">
-            私たちは計測・解析ソリューションの力で、次世代の研究・製造を支援します。
+            技術と好奇心で、世界に新たなベクトルを示す。
           </p>
         </div>
         <div className="opacity-0 animate-fadeInUpDelay9">
           <p className="mb-1 text-xs md:text-sm lg:text-base">
-            粒子測定のために必要な前処理装置、超音波分散機および、測定データ検証用のデータ解析システムなど、
+            私たちは、制約に縛られず、 自由な発想と誠実な技術力で、
+            “未来の当たり前”を創造します。
           </p>
           <p className="mb-12 text-xs md:text-sm lg:text-base">
-            トータルでサポートいたします。
+            Zerictorは、 既存の価値観を超えて、
+            ワクワクするような体験と変化を、ITの力で社会に届けるプロフェッショナル集団です。
           </p>
           <Button className="py-3 px-9 h-12.5 duration-300 hover:translate-2 hover:bg-foreground bg-foreground shadow-2xl hover:shadow-none">
             <div className="flex items-center gap-2">
