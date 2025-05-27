@@ -5,12 +5,15 @@ export default function WhatWeDoSection() {
       <div className="h-dvh bg-gradient-to-t from-foreground to-foreground/40">
         <div className="flex flex-col items-center justify-center text-primary-foreground font-bold tracking-widest h-full px-6">
           <h2 className="text-4xl md:text-7xl mb-24">WHAT WE DO</h2>
-          <div className="flex flex-col gap-6 max-w-xl text-xs md:text-base">
-            <p className="">
-              私たちは、粒子物質測定に特化した解析ソフトウェア、周辺ツール、保守サービスを提供する会社です。
-            </p>
-            <p>業界のパイオニアとして30年以上の実績をもつエンジニアが在籍。</p>
+          <div className="flex flex-col gap-6 max-w-xl text-xs md:text-base text-pretty leading-8">
             <p>
+              Zerictorは、
+              テクノロジーと創造力で「まだ存在しない価値」を生み出すチームです。
+            </p>
+            <p>
+              私たちが大切にしているのは、“面白いことに真剣である”ということ。
+              技術に熱中し、遊び心を忘れず、
+              誠実に、お客様と一緒に“新しい当たり前”をつくっていきます。
               今までも、そしてこれからも、お客様の事業継続に貢献してまいります。
             </p>
           </div>

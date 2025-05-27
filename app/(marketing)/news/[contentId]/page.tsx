@@ -2,11 +2,10 @@ import { Badge } from "@/lib/components/ui/badge";
 import { formatToJapaneseDateTime } from "@/lib/microcms/date-fns";
 import { getNewsDetail } from "@/lib/microcms/news";
 import Image from "next/image";
-import { load } from "cheerio";
-import hljs from "highlight.js";
 import { Button } from "@/lib/components/ui/button";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
+import PageBreadcrumb from "@/lib/components/page-breadcrumb";
 
 export default async function Page({
   params,
@@ -17,7 +16,7 @@ export default async function Page({
   const news = await getNewsDetail(contentId);
   return (
     <div className="bg-muted">
-      <div className="container mx-auto px-12 py-12">
+      <div className="container mx-auto px-12 py-24">
         <div className="flex gap-4 mb-8">
           <Badge>{news.category.name}</Badge>
           <p className="text-sm text-muted-foreground">
@@ -25,7 +24,7 @@ export default async function Page({
           </p>
         </div>
         <h1 className="text-4xl font-semibold mb-12">{news.title}</h1>
-        <div className="p-24 bg-background rounded-lg flex flex-col gap-4 items-center">
+        <div className="p-24 bg-background rounded-lg flex flex-col gap-4 items-center mb-24">
           <div className="flex flex-col justify-center gap-4 ">
             {news.thumbnail && (
               <Image
@@ -36,11 +35,12 @@ export default async function Page({
                 className="mb-18"
               />
             )}
-            <div
-              dangerouslySetInnerHTML={{
-                __html: `${formatRichText(news.content)}`,
-              }}
-            />
+            <div className="w-full">
+              <div
+                className="prose dark:prose-invert max-w-none"
+                dangerouslySetInnerHTML={{ __html: news.content }}
+              />
+            </div>
           </div>
           <Button asChild className="h-13 w-2xs">
             <Link href="/news">
@@ -49,21 +49,14 @@ export default async function Page({
             </Link>
           </Button>
         </div>
+        <PageBreadcrumb
+          items={[
+            { title: "HOME", url: "/" },
+            { title: "NEWS", url: "/news" },
+            { title: news.title },
+          ]}
+        />
       </div>
     </div>
   );
-}
-
-function formatRichText(richText: string) {
-  const $ = load(richText, null, false);
-  $("pre code").each((_, elm) => {
-    const lang = $(elm).attr("class");
-    const res = lang
-      ? hljs.highlight($(elm).text(), {
-          language: lang?.replace(/^language-/, "") || "",
-        })
-      : hljs.highlightAuto($(elm).text());
-    $(elm).html(res.value);
-  });
-  return $.html();
 }

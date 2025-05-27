@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import Header from "./header";
 import Image from "next/image";
-import Hero from "./images/hero.jpg";
+import Hero from "../hero.jpg";
 import Footer from "./footer";
 import { AppConfig } from "@/app.config";
 import { getBaseURL } from "@/lib/base-url";

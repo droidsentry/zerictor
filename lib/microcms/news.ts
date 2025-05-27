@@ -3,7 +3,7 @@ import "server-only";
 import { client } from "./client";
 import { notFound } from "next/navigation";
 import { MicroCMSQueries } from "microcms-js-sdk";
-import { NewsContent } from "./types";
+import { Category, NewsContent } from "./types";
 
 // ニュース一覧を取得
 export const getNewsList = async (queries?: MicroCMSQueries) => {
@@ -15,7 +15,6 @@ export const getNewsList = async (queries?: MicroCMSQueries) => {
     .catch(notFound);
   return listData;
 };
-
 // ニュースの詳細を取得
 export const getNewsDetail = async (
   contentId: string,
@@ -30,4 +29,13 @@ export const getNewsDetail = async (
     .catch(notFound);
 
   return detailData;
+};
+
+export const getCategoryList = async () => {
+  const categoryData = await client
+    .getList<Category>({
+      endpoint: "categories",
+    })
+    .catch(notFound);
+  return categoryData;
 };

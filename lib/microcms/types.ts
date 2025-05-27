@@ -1,7 +1,7 @@
 import type {
-  MicroCMSImage,
   MicroCMSContentId,
   MicroCMSDate,
+  MicroCMSImage,
 } from "microcms-js-sdk";
 
 // カテゴリーの型定義
@@ -28,3 +28,13 @@ export type NewsLists = {
 export type NewsDetail = {
   news: NewsItem;
 };
+
+// ビジネスの型定義
+export type BusinessContent = {
+  title: string;
+  subTitle: string;
+  description: string;
+  image: MicroCMSImage;
+  link?: string;
+};
+export type BusinessItem = BusinessContent & MicroCMSContentId & MicroCMSDate;

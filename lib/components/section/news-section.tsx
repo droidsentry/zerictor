@@ -1,12 +1,11 @@
 import { Button } from "@/lib/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import { getNewsList } from "@/lib/microcms/news";
-import NewsList from "./news-list";
-import { TOP_NEWS_LIMIT } from "@/lib/constants";
+import NewsList from "../news/news-list";
+import { TOP_NEWS_LIMIT } from "@/lib/config/constants";
 
 export default async function NewsSection() {
   const newsList = await getNewsList({ limit: TOP_NEWS_LIMIT });
-  console.log(newsList);
   return (
     <div className="bg-background">
       <div className="container mx-auto py-48 ">
@@ -17,7 +16,10 @@ export default async function NewsSection() {
             <ChevronRight className="size-4 group-hover:translate-x-1 duration-300" />
           </Button>
         </div>
-        <NewsList articles={newsList.contents} />
+
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <NewsList articles={newsList.contents} />
+        </ul>
       </div>
     </div>
   );

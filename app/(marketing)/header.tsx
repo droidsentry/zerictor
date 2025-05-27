@@ -10,24 +10,7 @@ import {
 } from "@/lib/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
 import { AppConfig } from "@/app.config";
-
-const navigationItems = [
-  { label: "HOME", href: "/" },
-  { label: "COMPANY", href: "/company" },
-  { label: "SERVICE", href: "/" },
-  { label: "NEWS", href: "/" },
-  { label: "CONTACT", href: "/" },
-  { label: "CAREERS", href: "/" },
-] as const;
-
-const mobileNavigationItems = [
-  { label: "Home", href: "/" },
-  { label: "Company", href: "/company" },
-  { label: "Service", href: "/" },
-  { label: "News", href: "/" },
-  { label: "Careers", href: "/" },
-  { label: "Contact", href: "/" },
-] as const;
+import { NAVIGATION_ITEMS } from "@/lib/config/navigation";
 
 export default function Header() {
   return (
@@ -54,7 +37,7 @@ export default function Header() {
       </Button>
 
       <nav className="hidden lg:block">
-        {navigationItems.map((item) => (
+        {NAVIGATION_ITEMS.map((item) => (
           <Button
             key={item.label}
             variant="ghost"
@@ -89,7 +72,7 @@ function MobileNav({ className }: { className?: string }) {
             <SheetTitle>{AppConfig.title}</SheetTitle>
           </SheetHeader>
           <div className="grid gap-6 p-6">
-            {mobileNavigationItems.map((item) => (
+            {NAVIGATION_ITEMS.map((item) => (
               <Button
                 key={item.label}
                 className="w-fit"

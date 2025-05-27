@@ -1,17 +1,16 @@
-import HeroSection from "@/app/(marketing)/components/hero-section";
-import InquirySection from "@/app/(marketing)/components/inquiry-section";
-import ServiceSection from "@/app/(marketing)/components/service-section";
-import WhatWeDoSection from "@/app/(marketing)/components/what-we-do-section";
+import HeroSection from "@/lib/components/section/hero-section";
+import ContactSection from "@/lib/components/section/contact-section";
+import BusinessSection from "@/lib/components/section/business-section";
+import WhatWeDoSection from "@/lib/components/section/what-we-do-section";
+import NewsSection from "@/lib/components/section/news-section";
 
-import NewsSection from "@/app/(marketing)/components/news-section";
-
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <HeroSection />
       <WhatWeDoSection />
-      <ServiceSection />
-      <InquirySection />
+      <BusinessSection />
+      <ContactSection />
       <NewsSection />
       {/* <CareersSection /> */}
     </>
