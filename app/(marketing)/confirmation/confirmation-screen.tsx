@@ -22,14 +22,12 @@ export default function ConfirmationScreen({
 }) {
   return (
     <Card className="w-full max-w-md ">
-      <CardHeader className="space-y-1.5">
+      <CardHeader className="space-y-2">
         <CardTitle className="text-2xl font-bold text-center">
           お問い合わせ完了
         </CardTitle>
         <CardDescription className="text-center">
-          お問い合わせいただきありがとうございます。
-          <br />
-          2営業日以内にご返信いたします。
+          お問い合わせ頂きありがとうございます。
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
@@ -46,11 +44,11 @@ export default function ConfirmationScreen({
             {type === "online" && (
               <>
                 <HeadsetIcon className="size-10" />
-                <span className="text-sm font-medium">
+                <p className="text-sm font-medium">
                   下記ボタンをクリックし、
                   <br />
                   オンライン相談を予約してください。
-                </span>
+                </p>
               </>
             )}
           </div>

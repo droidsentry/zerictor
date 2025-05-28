@@ -2,6 +2,15 @@ import Image from "next/image";
 import CompanyHoro from "./images/company-horo.png";
 import { Card, CardContent } from "@/lib/components/ui/card";
 import PageBreadcrumb from "@/lib/components/page-breadcrumb";
+import { Metadata } from "next";
+import { getBaseURL } from "@/lib/base-url";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(getBaseURL()),
+  title: "会社概要",
+  description:
+    "当社の企業理念、事業内容、会社情報をご紹介しています。私たちのミッションやビジョン、サービスへの取り組みについて詳しくご確認いただけます。",
+};
 
 export default function Page() {
   return (
@@ -27,7 +36,7 @@ export default function Page() {
           />
           <p className="max-w-3xl text-pretty font-bold text-xl tracking-widest">
             私たちは、制約に縛られず、 自由な発想と誠実な技術力で、
-            “未来の当たり前”を創造します。 Zerictorは、 既存の価値観を超えて、
+            「未来の当たり前」を創造します。 Zerictorは、 既存の価値観を超えて、
             ワクワクするような体験と変化を、ITの力で社会に届けるプロフェッショナル集団です。
           </p>
         </section>
@@ -93,7 +102,7 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="flex flex-col lg:flex-row items-start justify-between gap-12 py-24">
+        <section className="flex flex-col lg:flex-row items-start justify-between gap-12">
           <div className="flex-1">
             <h2 className="text-7xl font-bold tracking-widest mb-6">ABOUT</h2>
             <div className="space-y-6">
@@ -141,6 +150,7 @@ export default function Page() {
             { title: "HOME", url: "/" },
             { title: "COMPANY" }, // urlなしで現在のページ
           ]}
+          className="mt-24"
         />
       </div>
     </div>

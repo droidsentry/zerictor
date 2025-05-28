@@ -4,6 +4,15 @@ import NewsList from "@/lib/components/news/news-list";
 import { NEWS_LIST_LIMIT } from "@/lib/config/constants";
 import Link from "next/link";
 import PageBreadcrumb from "@/lib/components/page-breadcrumb";
+import { Metadata } from "next";
+import { getBaseURL } from "@/lib/base-url";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(getBaseURL()),
+  title: "ニュース一覧",
+  description:
+    "サービスに関する最新情報、アップデート、お知らせを随時更新しています。重要な機能追加やメンテナンス情報など、ユーザーの皆様に役立つ情報をいち早くお届けします。",
+};
 
 export default async function Page({
   searchParams,
@@ -32,7 +41,7 @@ export default async function Page({
   return (
     <div className="bg-muted">
       <div className="container mx-auto px-3 md:px-12 py-24">
-        <div className="flex flex-col items-center justify-center pb-24">
+        <div className="flex flex-col items-center justify-center">
           <h2 className="text-4xl font-bold mb-4">すべての記事一覧</h2>
           <div className="flex gap-2 mb-12">
             <Button variant={!categoryId ? "default" : "outline"} size="sm">
@@ -57,6 +66,7 @@ export default async function Page({
             { title: "HOME", url: "/" },
             { title: "NEWS" }, // urlなしで現在のページ
           ]}
+          className="mt-24"
         />
       </div>
     </div>

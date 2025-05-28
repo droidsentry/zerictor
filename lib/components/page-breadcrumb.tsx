@@ -8,6 +8,7 @@ import {
 } from "@/lib/components/ui/breadcrumb";
 import Link from "next/link";
 import React from "react";
+import { cn } from "../utils";
 
 export interface BreadcrumbItem {
   title: string;
@@ -16,11 +17,15 @@ export interface BreadcrumbItem {
 
 interface PageBreadcrumbProps {
   items: BreadcrumbItem[];
+  className?: string;
 }
 
-export default function PageBreadcrumb({ items }: PageBreadcrumbProps) {
+export default function PageBreadcrumb({
+  items,
+  className,
+}: PageBreadcrumbProps) {
   return (
-    <Breadcrumb>
+    <Breadcrumb className={cn(className)}>
       <BreadcrumbList>
         {items.map((item, index) => {
           const isLast = index === items.length - 1;

@@ -202,7 +202,7 @@ export const BusinessCarousel = ({
           <div className="flex justify-center h-12.5 items-center gap-4">
             {businessList[active]?.link && (
               <Button
-                className="text-sm py-3 px-12 h-12.5 duration-300 hover:translate-2 hover:bg-foreground bg-foreground shadow-2xl hover:shadow-none"
+                className="text-sm py-3 px-12 h-12.5 duration-300 hover:translate-2 font-bold shadow-2xl hover:shadow-none"
                 asChild
               >
                 <Link href={businessList[active].link} target="_blank">

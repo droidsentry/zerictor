@@ -7,10 +7,7 @@ export default function ContactSection() {
     <div className="bg-background/10">
       <div className="container mx-auto px-6 md:px-12 lg:px-24 py-12 md:py-24 text-primary-foreground tracking-widest">
         <div className="flex items-center justify-between flex-col md:flex-row gap-12">
-          <div
-            className="p-5 rounded-lg
-          "
-          >
+          <div className="p-5 rounded-lg">
             <p className="text-xl md:text-2xl lg:text-3xl font-bold mb-8">
               ご相談・ご依頼・ご質問など、どんなことでもお気軽にご連絡ください。
             </p>
@@ -26,7 +23,7 @@ export default function ContactSection() {
           >
             <Link href="/contact">
               <div className="flex items-center gap-2">
-                <span className="tracking-widest font-bold text-xs md:text-sm">
+                <span className="tracking-widest font-bold text-xs md:text-sm ">
                   お問い合わせはこちら
                 </span>
                 <ChevronRight className="size-4" />

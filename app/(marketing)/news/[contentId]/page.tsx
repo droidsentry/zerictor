@@ -6,6 +6,15 @@ import { Button } from "@/lib/components/ui/button";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import PageBreadcrumb from "@/lib/components/page-breadcrumb";
+import { Metadata } from "next";
+import { getBaseURL } from "@/lib/base-url";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(getBaseURL()),
+  title: "ニュース詳細",
+  description:
+    "サービスに関する重要なお知らせや最新情報の詳細をご確認いただけます。機能アップデートやメンテナンス情報など、ユーザーの皆様に必要な情報を分かりやすくお伝えします。",
+};
 
 export default async function Page({
   params,
@@ -24,7 +33,7 @@ export default async function Page({
           </p>
         </div>
         <h1 className="text-4xl font-semibold mb-12">{news.title}</h1>
-        <div className="p-24 bg-background rounded-lg flex flex-col gap-4 items-center mb-24">
+        <div className="p-24 bg-background rounded-lg flex flex-col gap-4 items-center">
           <div className="flex flex-col justify-center gap-4 ">
             {news.thumbnail && (
               <Image
@@ -55,6 +64,7 @@ export default async function Page({
             { title: "NEWS", url: "/news" },
             { title: news.title },
           ]}
+          className="mt-24"
         />
       </div>
     </div>

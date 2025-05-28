@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AppConfig } from "@/app.config";
 import { Badge } from "@/lib/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { NAVIGATION_ITEMS } from "@/lib/config/navigation";
 
 export default function Footer() {
   const footerCards = [
@@ -16,19 +17,10 @@ export default function Footer() {
     },
     {
       title: "CAREERS",
-      description: "2025年の新卒募集を開始しました。",
-      link: "/",
+      description: "2025年の採用情報を開始しました。",
+      link: "/careers",
       badge: "エントリー開始！",
     },
-  ];
-
-  const navItems = [
-    { label: "HOME", href: "/" },
-    { label: "COMPANY", href: "/" },
-    { label: "SERVICE", href: "/" },
-    { label: "NEWS", href: "/" },
-    { label: "CONTACT", href: "/" },
-    { label: "CAREERS", href: "/" },
   ];
 
   return (
@@ -43,25 +35,25 @@ export default function Footer() {
               <div>
                 <div
                   className={cn(
-                    "text-2xl lg:text-4xl text-chart-1 tracking-wider font-bold flex flex-col lg:items-center gap-2 mb-6",
+                    "text-2xl lg:text-4xl text-primary tracking-wider font-bold flex flex-col lg:items-center gap-2 mb-6",
                     card.badge && "lg:flex-row-reverse"
                   )}
                 >
                   {card.badge && (
-                    <Badge className="bg-chart-1 text-white rounded-full text-sm -tracking-normal">
+                    <Badge className="bg-primary text-white rounded-full text-sm -tracking-normal">
                       {card.badge}
                     </Badge>
                   )}
-                  {card.title}
+                  <p>{card.title}</p>
                 </div>
                 <div className="font-semibold text-sm lg:text-base">
                   {card.description}
                 </div>
-                {/* <button>
+                <button>
                   <Link href={card.link}>
                     <span className="absolute inset-0" />
                   </Link>
-                </button> */}
+                </button>
               </div>
               <ChevronRight className="size-12 group-hover:translate-x-2 duration-300" />
             </Card>
@@ -75,11 +67,11 @@ export default function Footer() {
             asChild
           >
             <Link className="" href="/">
-              <span className="text-xl">COLNOVA</span>
+              <span className="text-xl"> {AppConfig.title}</span>
             </Link>
           </Button>
           <nav className="flex flex-col lg:flex-row gap-2 p-2">
-            {navItems.map((item, index) => (
+            {NAVIGATION_ITEMS.map((item, index) => (
               <Button
                 key={index}
                 variant="ghost"
@@ -100,7 +92,7 @@ export default function Footer() {
             className="hover:bg-transparent hover:text-primary-foreground/80"
             asChild
           >
-            <Link className="" href="/">
+            <Link className="" href="/privacy">
               <span className="text-sm font-bold tracking-widest">
                 PRIVACY POLICY
               </span>

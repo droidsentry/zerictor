@@ -1,3 +1,8 @@
+import {
+  EmploymentTypeId,
+  JobCategoryId,
+  OtherTagId,
+} from "@/app/(marketing)/careers/data/careers";
 import type {
   MicroCMSContentId,
   MicroCMSDate,
@@ -37,4 +42,21 @@ export type BusinessContent = {
   image: MicroCMSImage;
   link?: string;
 };
+
 export type BusinessItem = BusinessContent & MicroCMSContentId & MicroCMSDate;
+
+export type CareerTag = {
+  employmentTypeIds?: EmploymentTypeId[]; // 雇用形態 (例: "正社員", "アルバイト")
+  jobCategoryIds?: JobCategoryId[]; // 職種カテゴリー (例: "エンジニア", "デザイナー")
+  othersIds?: OtherTagId[]; // その他 (オプショナル)
+};
+
+export type Career = {
+  careerId: string;
+  title: string; // 職種
+  tag: CareerTag; // ★変更点
+  jobDescription: string; // 仕事内容
+  mustSkills: string[]; // 必須スキル
+  welcomeSkills: string[]; // 歓迎スキル
+  humanResources: string[]; // 人材スキル
+};
