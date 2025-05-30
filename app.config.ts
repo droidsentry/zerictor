@@ -7,4 +7,5 @@ export const AppConfig = {
   department: "Zerictor-Department",
   email: "support@zerictor.com",
   supportFormLink: "https://tally.so/r/wv1G8X",
+  onlineConsultationLink: "https://cal.com/zerictor",
 } as const;

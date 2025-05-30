@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="flex h-dvh flex-col items-center p-4 pt-33">
+    <div className="flex h-dvh flex-col items-center p-4 pt-33 backdrop-blur-sm">
       <ConfirmationScreen type="email" />
     </div>
   );

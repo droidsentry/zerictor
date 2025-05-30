@@ -1,3 +1,4 @@
+import { AppConfig } from "@/app.config";
 import { Button } from "@/lib/components/ui/button";
 import {
   Card,
@@ -57,7 +58,7 @@ export default function ConfirmationScreen({
       <CardFooter>
         <Button asChild className="w-full gap-4">
           <Link
-            href={type === "email" ? "/" : "https://cal.com/zerictor-p6fgmh"}
+            href={type === "email" ? "/" : AppConfig.onlineConsultationLink}
             target={type === "email" ? "_self" : "_blank"}
           >
             {type === "email" && (
