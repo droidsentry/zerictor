@@ -18,11 +18,21 @@ export const metadata: Metadata = {
 
 export default async function Page({
   params,
+  searchParams,
 }: {
   params: Promise<{ contentId: string }>;
+  searchParams: Promise<{
+    draftKey: string;
+  }>;
 }) {
-  const contentId = (await params).contentId;
-  const news = await getNewsDetail(contentId);
+  const { contentId } = await params;
+  const { draftKey } = await searchParams;
+
+  console.log("draftKey", draftKey);
+
+  const news = await getNewsDetail(contentId, {
+    draftKey,
+  });
   return (
     <div className="bg-muted">
       <div className="container mx-auto px-12 py-24">
