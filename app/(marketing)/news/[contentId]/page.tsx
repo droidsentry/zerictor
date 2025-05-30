@@ -28,8 +28,6 @@ export default async function Page({
   const { contentId } = await params;
   const { draftKey } = await searchParams;
 
-  console.log("draftKey", draftKey);
-
   const news = await getNewsDetail(contentId, {
     draftKey,
   });
