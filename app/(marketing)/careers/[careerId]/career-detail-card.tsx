@@ -155,8 +155,8 @@ export default function CareerDetailCard({ career }: { career: Career }) {
                 <TableCell className="border bg-muted">勤務地</TableCell>
                 <TableCell className="border">
                   <p className="pb-2">
-                    108-0073 東京都港区三田3丁目5番19号
-                    住友不動産東京三田ガーデンタワー
+                    〒170-0013
+                    東京都豊島区東池袋2丁目62番8号BIGオフィスプラザ池袋1206
                   </p>
                   <div className="flex items-center gap-2 border-t pt-2">
                     <MapPinIcon className="inline size-5 text-primary" />
