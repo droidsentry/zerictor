@@ -140,7 +140,7 @@ export default function Page() {
             <iframe
               className="w-full h-80 lg:h-96 rounded-lg shadow-lg"
               title="company-location"
-              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY}&q=35.7341078,139.713066&zoom=15&maptype=roadmap&language=ja`}
+              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY}&q=35.734142,139.717060&zoom=15&maptype=roadmap&language=ja`}
               allowFullScreen
               loading="lazy"
             />

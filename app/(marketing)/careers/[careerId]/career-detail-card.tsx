@@ -163,7 +163,7 @@ export default function CareerDetailCard({ career }: { career: Career }) {
                     <Button variant="link" className="p-0 h-fit">
                       <Link
                         href={
-                          "https://www.google.com/maps/search/?api=1&35.7291577,139.6944846"
+                          "https://www.google.com/maps/search/?api=1&query=35.734142,139.717060"
                         }
                         target="_blank"
                       >
