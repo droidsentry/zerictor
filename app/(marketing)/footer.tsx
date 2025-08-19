@@ -17,9 +17,10 @@ export default function Footer() {
     },
     {
       title: "CAREERS",
-      description: "2025年の採用情報を開始しました。",
+      description: "2025年の採用情報を終了しました。",
       link: "/careers",
-      badge: "エントリー開始！",
+      badge: null,
+      // badge: "エントリー開始！",
     },
   ];
 

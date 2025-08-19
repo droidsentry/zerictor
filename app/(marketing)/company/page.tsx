@@ -4,12 +4,29 @@ import { Card, CardContent } from "@/lib/components/ui/card";
 import PageBreadcrumb from "@/lib/components/page-breadcrumb";
 import { Metadata } from "next";
 import { getBaseURL } from "@/lib/base-url";
+import { AppConfig } from "@/app.config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
   title: "会社概要",
   description:
     "当社の企業理念、事業内容、会社情報をご紹介しています。私たちのミッションやビジョン、サービスへの取り組みについて詳しくご確認いただけます。",
+  robots: {
+    index: false, // ページをインデックスしない
+    follow: false, // リンクを辿らない
+    nocache: true, // キャッシュしない
+    noarchive: true, // アーカイブしない
+    nosnippet: true, // スニペット表示しない
+    noimageindex: true, // 画像をインデックスしない
+    googleBot: {
+      index: false,
+      follow: false,
+      nocache: true,
+      noarchive: true,
+      nosnippet: true,
+      noimageindex: true,
+    },
+  },
 };
 
 export default function Page() {
@@ -118,18 +135,19 @@ export default function Page() {
                   <tbody>
                     <tr>
                       <td className="w-1/4">会社名：</td>
-                      <td>株式会社Zerictor</td>
+                      <td>{AppConfig.companyJa}</td>
+                    </tr>
+                    <tr>
+                      <td className="w-1/4">代表取締役：</td>
+                      <td>{AppConfig.ceo}</td>
                     </tr>
                     <tr>
                       <td>所在地：</td>
-                      <td>
-                        〒170-0013
-                        東京都豊島区東池袋2丁目62番8号BIGオフィスプラザ池袋1206
-                      </td>
+                      <td>{AppConfig.address}</td>
                     </tr>
                     <tr>
                       <td>Email：</td>
-                      <td>info@zerictor.com</td>
+                      <td>{AppConfig.email}</td>
                     </tr>
                   </tbody>
                 </table>

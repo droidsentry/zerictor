@@ -8,6 +8,22 @@ export const metadata: Metadata = {
   title: "プライバシーポリシー",
   description:
     "当サービスにおける個人情報の取り扱いについて詳しく説明しています。お客様の大切な個人情報を適切に保護し、安心してサービスをご利用いただくための方針をご確認ください。",
+  robots: {
+    index: false, // ページをインデックスしない
+    follow: false, // リンクを辿らない
+    nocache: true, // キャッシュしない
+    noarchive: true, // アーカイブしない
+    nosnippet: true, // スニペット表示しない
+    noimageindex: true, // 画像をインデックスしない
+    googleBot: {
+      index: false,
+      follow: false,
+      nocache: true,
+      noarchive: true,
+      nosnippet: true,
+      noimageindex: true,
+    },
+  },
 };
 
 export default function Page() {
@@ -177,11 +193,11 @@ export default function Page() {
           本ポリシーに関するお問い合わせは，下記の窓口までお願いいたします。
         </p>
         <ul>
-          <li>住所：</li>
-          <li>社名：</li>
-          <li>代表取締役：</li>
-          <li>担当部署：</li>
-          <li>Eメールアドレス：</li>
+          <li>住所：{AppConfig.address}</li>
+          <li>社名：{AppConfig.companyJa}</li>
+          <li>代表取締役：{AppConfig.ceo}</li>
+          <li>担当部署：{AppConfig.department}</li>
+          <li>Eメールアドレス：{AppConfig.email}</li>
         </ul>
       </div>
       <PageBreadcrumb
